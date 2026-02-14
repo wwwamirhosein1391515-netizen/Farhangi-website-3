@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میراث فرهنگی ایران | Iran Cultural Heritage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D4AF37;
+            --accent-color: #C41E3A;
+            --bg-dark: #1a0f0a;
+            --bg-light: #f5f1ed;
+            --text-dark: #2c1810;
+            --text-light: #f5f1ed;
+            --persian-blue: #1e3a8a;
+            --turquoise: #14b8a6;
+            --gold: #fbbf24;
+            --cream: #fef3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* Persian Pattern Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 69, 19, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 15, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 2px solid var(--secondary-color);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
+            }
+            to {
+                text-shadow: 2px 2px 20px rgba(212, 175, 55, 0.8);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f0a 0%, #3d2314 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="p" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 0 L10 20 M0 10 L20 10" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23p)"/></svg>');
+            opacity: 0.3;
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold));
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: -50px auto 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            animation: fadeIn 1s ease-out both;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            font-family: 'Amiri', serif;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .category-card {
+            position: relative;
+            min-height: 350px;
+            border-radius: 25px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--bg-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(196, 30, 58, 0.1) 0%, transparent 50%);
+            z-index: 0;
+            transition: all 0.5s ease;
+        }
+
+        .category-card:hover::before {
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(196, 30, 58, 0.2) 0%, transparent 50%);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .category-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .category-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .category-count {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.2rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .category-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            color: var(--cream);
+        }
+
+        .category-card:hover .category-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Heritage Items Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            border: none;
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            z-index: 2001;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg) scale(1.1);
+            background: var(--gold);
+        }
+
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .heritage-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            animation: fadeInUp 0.5s ease-out both;
+            border: 2px solid transparent;
+        }
+
+        .heritage-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+            border-color: var(--secondary-color);
+        }
+
+        .heritage-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .heritage-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .heritage-info {
+            padding: 2rem;
+        }
+
+        .heritage-name {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .heritage-location {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .heritage-description {
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .heritage-period {
+            display: inline-block;
+            background: var(--cream);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Detail Modal */
+        .detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 3000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .detail-modal.active {
+            display: block;
+        }
+
+        .detail-content {
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .detail-header {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .detail-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .detail-title {
+            position: relative;
+            color: white;
+            font-family: 'Amiri', serif;
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            z-index: 2;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .detail-body {
+            padding: 3rem;
+        }
+
+        .detail-section {
+            margin-bottom: 2.5rem;
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            border-right: 4px solid var(--secondary-color);
+        }
+
+        .detail-section h3 {
+            font-family: 'Amiri', serif;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .detail-section h3::before {
+            content: '◆';
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .detail-section p {
+            line-height: 2.2;
+            color: var(--text-dark);
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        .detail-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .highlight-item strong {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Interactive Map */
+        .map-section {
+            padding: 6rem 5%;
+            background: var(--bg-dark);
+        }
+
+        .map-section .section-title {
+            color: var(--secondary-color);
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        .map-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-point {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 8px var(--accent-color));
+        }
+
+        .map-point:hover {
+            transform: scale(1.5);
+            filter: drop-shadow(0 0 15px var(--gold));
+        }
+
+        .map-tooltip {
+            position: absolute;
+            background: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .map-tooltip.active {
+            opacity: 1;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            order: 2;
+        }
+
+        .timeline-item:nth-child(even) .timeline-visual {
+            order: 1;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--secondary-color);
+            transform: scale(1.02);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            font-family: 'Amiri', serif;
+            font-size: 1.1rem;
+        }
+
+        .timeline-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+        }
+
+        .timeline-text {
+            line-height: 2;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .timeline-visual {
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        .timeline-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--secondary-color);
+            z-index: 1;
+        }
+
+        /* Search & Filter */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 50px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(212, 175, 55, 0.3);
+            border-top-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(26, 15, 10, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.4s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 0;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .heritage-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                right: 20px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                padding-right: 3rem;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-visual {
+                order: initial;
+            }
+
+            .timeline-dot {
+                right: 12px;
+            }
+
+            .detail-header {
+                height: 250px;
+            }
+
+            .detail-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .detail-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🏛️ میراث ایران</div>
+            <ul class="nav-links">
+                <li><a href="#home">خانه</a></li>
+                <li><a href="#categories">دسته‌بندی‌ها</a></li>
+                <li><a href="#map">نقشه</a></li>
+                <li><a href="#timeline">تاریخچه</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>میراث فرهنگی ایران</h1>
+            <p>سفری در دل تمدن کهن و باشکوه ایران زمین</p>
+            <a href="#categories" class="cta-button">کاوش میراث‌ها</a>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat-card">
+            <span class="stat-number">26</span>
+            <span class="stat-label">میراث جهانی یونسکو</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">2500+</span>
+            <span class="stat-label">سال تمدن</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">بنای تاریخی</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">7000+</span>
+            <span class="stat-label">سال تاریخ</span>
+        </div>
+    </div>
+
+    <section class="categories" id="categories">
+        <h2 class="section-title scroll-reveal">دسته‌بندی میراث‌ها</h2>
+        
+        <div class="category-grid">
+            <div class="category-card scroll-reveal" data-category="unesco">
+                <div class="category-content">
+                    <span class="category-icon">🏛️</span>
+                    <h3 class="category-title">میراث جهانی یونسکو</h3>
+                    <p class="category-count">26 میراث ثبت شده</p>
+                    <p class="category-description">میراث‌های ایران در فهرست یونسکو شامل پرسپولیس، میدان نقش جهان، باغ‌های ایرانی و بناهای منحصر به فرد دیگر است که هر کدام نماینده دوره‌ای از تمدن کهن ایران می‌باشند.</p>
+                </div>
+            </div>
+
+            <div class="category-card scroll-reveal" data-category="palaces">
+                <div class="category-content">
+                    <span class="category-icon">👑</span>
+                    <h3 class="category-title">کاخ‌ها و عمارت‌ها</h3>
+                    <p class="category-count">45+ کاخ و عمارت</p>
+                    <p class="category-description">کاخ‌های باشکوه و عمارت‌های تاریخی از دوران صفویه تا قاجار که هر کدام نمونه‌ای از هنر معماری و زندگی دربار را به نمایش می‌گذارند.</p>
+                </div>
+            </div>
+
+            <div class="category-card scroll-reveal" data-category="mosques">
+                <div class="category-content">
+                    <span class="category-icon">🕌</span>
+                    <h3 class="category-title">مساجد تاریخی</h3>
+                    <p class="category-count">100+ مسجد</p>
+                    <p class="category-description">مساجد باشکوه با معماری اسلامی-ایرانی، گنبدهای فیروزه‌ای، کاشی‌کاری‌های منحصر به فرد و کتیبه‌های قرآنی زیبا که هنر و معنویت را در هم می‌آمیزند.</p>
+                </div>
+            </div>
+
+            <div class="category-card scroll-reveal" data-category="gardens">
+                <div class="category-content">
+                    <span class="category-icon">🌳</span>
+                    <h3 class="category-title">باغ‌های ایرانی</h3>
+                    <p class="category-count">9 باغ یونسکو</p>
+                    <p class="category-description">باغ‌های ایرانی با طراحی چهارباغ، نماد بهشت روی زمین، با کانال‌های آب، درختان کهنسال و عمارت‌های زیبا که هنر باغ‌سازی ایرانی را نشان می‌دهند.</p>
+                </div>
+            </div>
+
+            <div class="category-card scroll-reveal" data-category="bazaars">
+                <div class="category-content">
+                    <span class="category-icon">🏪</span>
+                    <h3 class="category-title">بازارهای تاریخی</h3>
+                    <p class="category-count">50+ بازار</p>
+                    <p class="category-description">بازارهای سنتی با معماری آجری، تیمچه‌ها، کاروانسراها و راسته‌های صنفی که مرکز تجارت و تعامل اجتماعی ایرانیان بوده‌اند.</p>
+                </div>
+            </div>
+
+            <div class="category-card scroll-reveal" data-category="caravanserais">
+                <div class="category-content">
+                    <span class="category-icon">🐪</span>
+                    <h3 class="category-title">کاروانسراها</h3>
+                    <p class="category-count">70+ کاروانسرا</p>
+                    <p class="category-description">کاروانسراهای تاریخی در مسیر جاده ابریشم که به عنوان پناهگاه و مرکز تجاری کاروان‌ها در صحراها و کوهستان‌ها عمل می‌کردند.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Heritage Items -->
+    <div class="modal" id="heritageModal">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        <div class="modal-content">
+            <h2 class="section-title" id="modalTitle" style="color: var(--secondary-color);"></h2>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="جستجو در میراث‌ها...">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="color: white; margin-top: 1rem;">در حال بارگذاری...</p>
+            </div>
+            <div class="heritage-grid" id="heritageGrid"></div>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div class="detail-modal" id="detailModal">
+        <button class="close-modal" onclick="closeDetailModal()">×</button>
+        <div class="detail-content">
+            <div class="detail-header" id="detailHeader">
+                <h2 class="detail-title" id="detailTitle"></h2>
+            </div>
+            <div class="detail-body">
+                <div class="detail-section">
+                    <h3>درباره</h3>
+                    <p id="detailAbout"></p>
+                </div>
+                <div class="detail-section">
+                    <h3>تاریخچه کامل</h3>
+                    <p id="detailHistory"></p>
+                </div>
+                <div class="detail-section">
+                    <h3>معماری و ویژگی‌ها</h3>
+                    <p id="detailArchitecture"></p>
+                </div>
+                <div class="detail-section">
+                    <h3>موقعیت مکانی و دسترسی</h3>
+                    <p id="detailLocation"></p>
+                </div>
+                <div class="detail-section" id="highlightsSection">
+                    <h3>نکات برجسته</h3>
+                    <div class="detail-highlights" id="detailHighlights"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="map-section" id="map">
+        <h2 class="section-title">نقشه تعاملی میراث‌های ایران</h2>
+        <div class="map-container scroll-reveal">
+            <svg class="map-svg" viewBox="0 0 800 600">
+                <path d="M100,200 L200,180 L300,160 L400,170 L500,180 L600,200 L650,250 L680,300 L670,350 L650,400 L600,450 L500,470 L400,460 L300,440 L200,420 L150,380 L120,330 L100,280 Z" 
+                      fill="rgba(139, 69, 19, 0.2)" 
+                      stroke="var(--secondary-color)" 
+                      stroke-width="2"/>
+                
+                <circle class="map-point" cx="400" cy="300" r="10" fill="var(--accent-color)" data-name="تهران" data-heritage="35"/>
+                <circle class="map-point" cx="300" cy="280" r="10" fill="var(--accent-color)" data-name="اصفهان" data-heritage="28"/>
+                <circle class="map-point" cx="450" cy="350" r="10" fill="var(--accent-color)" data-name="شیراز" data-heritage="22"/>
+                <circle class="map-point" cx="520" cy="250" r="10" fill="var(--accent-color)" data-name="مشهد" data-heritage="18"/>
+                <circle class="map-point" cx="250" cy="320" r="10" fill="var(--accent-color)" data-name="کاشان" data-heritage="15"/>
+                <circle class="map-point" cx="350" cy="240" r="10" fill="var(--accent-color)" data-name="همدان" data-heritage="12"/>
+                <circle class="map-point" cx="200" cy="250" r="10" fill="var(--accent-color)" data-name="کرمانشاه" data-heritage="14"/>
+                <circle class="map-point" cx="480" cy="420" r="10" fill="var(--accent-color)" data-name="یزد" data-heritage="20"/>
+            </svg>
+            <div class="map-tooltip" id="mapTooltip"></div>
+        </div>
+    </section>
+
+    <section class="timeline-section" id="timeline">
+        <h2 class="section-title scroll-reveal">سفر در زمان: تاریخچه میراث ایران</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item scroll-reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">550 ق.م</span>
+                    <h3 class="timeline-title">امپراتوری هخامنشی</h3>
+                    <p class="timeline-text">کوروش بزرگ امپراتوری هخامنشی را بنیان نهاد و پرسپولیس را به عنوان پایتخت تشریفاتی ساخت. این دوره آغاز یکی از بزرگترین تمدن‌های جهان باستان بود که شامل ۲۸ ملت مختلف و مساحتی از دریای مدیترانه تا رود سند بود. هخامنشیان با احترام به فرهنگ‌های مختلف، نظام اداری پیشرفته و معماری باشکوه، الگویی برای امپراتوری‌های آینده شدند.</p>
+                </div>
+                <div class="timeline-visual">🏛️</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item scroll-reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">224 م</span>
+                    <h3 class="timeline-title">امپراتوری ساسانی</h3>
+                    <p class="timeline-text">ساسانیان معماری شکوهمند ایرانی را به اوج رساندند. طاق کسری در تیسفون با بزرگترین طاق آجری بدون تکیه‌گاه جهان، نماد قدرت و هنر مهندسی ساسانی است. این دوره با احیای فرهنگ ایرانی، توسعه هنر، ادبیات و دین زرتشتی، پایه‌های فرهنگ ایران را استحکام بخشید.</p>
+                </div>
+                <div class="timeline-visual">⚔️</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item scroll-reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">1501 م</span>
+                    <h3 class="timeline-title">دوره صفویه</h3>
+                    <p class="timeline-text">شاه عباس اصفهان را به پایتخت تبدیل کرد و میدان نقش جهان، مسجد شاه و کاخ‌های باشکوه ساخته شد. این دوره طلایی معماری اسلامی-ایرانی است که در آن هنر کاشی‌کاری، نقاشی، قالی‌بافی و معماری به اوج خود رسید. اصفهان به "نصف جهان" شهرت یافت و مرکز تجارت و فرهنگ جهان اسلام شد.</p>
+                </div>
+                <div class="timeline-visual">🕌</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item scroll-reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">1794 م</span>
+                    <h3 class="timeline-title">دوره قاجار</h3>
+                    <p class="timeline-text">معماری قاجاری ترکیبی از سبک‌های ایرانی و اروپایی است. کاخ گلستان در تهران نمونه‌ای برجسته از این دوره می‌باشد که با آینه‌کاری‌های زیبا، نقاشی‌های دیواری و معماری منحصر به فرد، دوره گذار از سنت به مدرنیته را نشان می‌دهد. این دوره شاهد تحولات اجتماعی و فرهنگی مهمی در تاریخ ایران بود.</p>
+                </div>
+                <div class="timeline-visual">👑</div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Enhanced Heritage Database with More Details
+        const heritageData = {
+            unesco: [
+                {
+                    name: 'پرسپولیس',
+                    location: 'فارس، شیراز',
+                    period: 'هخامنشی (۵۱۸ ق.م)',
+                    icon: '🏛️',
+                    description: 'پایتخت تشریفاتی امپراتوری هخامنشیان که در ۵۱۸ قبل از میلاد توسط داریوش بزرگ بنا شد و نماد قدرت و شکوه یکی از بزرگترین امپراتوری‌های جهان باستان است.',
+                    history: 'پرسپولیس یکی از شاهکارهای معماری جهان باستان است که ساخت آن ۱۲۰ سال به طول انجامید. این مجموعه شامل کاخ‌های باشکوه، تالارهای عظیم و پلکان‌های با نقش‌برجسته‌های منحصر به فرد است. داریوش اول ساخت این شهر را در سال ۵۱۸ قبل از میلاد آغاز کرد و پسرانش خشایارشا و اردشیر اول آن را تکمیل کردند. پرسپولیس محل برگزاری جشن نوروز و استقبال از نمایندگان ۲۸ ملت تحت فرمان هخامنشیان بود. این شهر در سال ۳۳۰ قبل از میلاد توسط اسکندر مقدونی به آتش کشیده شد اما بقایای آن هنوز شاهد شکوه و عظمت تمدن هخامنشی است.',
+                    architecture: 'معماری پرسپولیس ترکیبی هماهنگ از هنر ایرانی، مصری، بابلی و یونانی است. تالار آپادانا با ستون‌های ۲۰ متری و سرستون‌های به شکل گاو نر و شیر، تالار صد ستون با مساحت ۳۶۰۰ متر مربع، دروازه ملل با مجسمه‌های گاو نر بالدار، و پلکان‌های باشکوه با نقش‌برجسته‌های هخامنشی از ویژگی‌های منحصر به فرد آن است. نقش‌برجسته‌ها نشان‌دهنده نمایندگان ملل مختلف با لباس‌های سنتی و هدایای خود برای پادشاه هستند. تمام ساختمان‌ها روی سکوی سنگی به ارتفاع ۱۸ متر قرار دارند که از سیل محافظت می‌کرد.',
+                    locationDetails: 'پرسپولیس در ۶۰ کیلومتری شمال شرقی شیراز و در دامنه کوه رحمت واقع شده است. این مکان به گونه‌ای انتخاب شده که از سه طرف توسط کوه محافظت می‌شود و از طرف چهارم دشت مرودشت دیده می‌شود.',
+                    highlights: [
+                        { title: 'تالار آپادانا', desc: 'بزرگترین تالار پرسپولیس با ۷۲ ستون ۲۰ متری' },
+                        { title: 'دروازه ملل', desc: 'ورودی اصلی با مجسمه‌های گاو نر بالدار' },
+                        { title: 'نقش‌برجسته‌ها', desc: 'تصاویر نمایندگان ۲۸ ملت هخامنشی' },
+                        { title: 'کاخ هدیش', desc: 'کاخ اختصاصی خشایارشا با معماری منحصر به فرد' }
+                    ]
+                },
+                {
+                    name: 'میدان نقش جهان',
+                    location: 'اصفهان',
+                    period: 'صفوی (۱۵۹۸ م)',
+                    icon: '🕌',
+                    description: 'یکی از بزرگترین میادین جهان با مساحت ۸.۹ هکتار که در دوره صفویه ساخته شد و مرکز سیاسی، اقتصادی و مذهبی اصفهان بود.',
+                    history: 'این میدان در زمان شاه عباس اول صفوی در اواخر قرن ۱۶ میلادی ساخته شد و به عنوان مرکز سیاسی، اقتصادی و فرهنگی اصفهان عمل می‌کرد. شاه عباس با ساخت این میدان و بناهای پیرامون آن، اصفهان را به "نصف جهان" تبدیل کرد. میدان محل برگزاری جشن‌ها، مراسم نظامی، بازی چوگان و استقبال از سفرای خارجی بود. میدان نقش جهان در سال ۱۹۷۹ به فهرست میراث جهانی یونسکو اضافه شد و امروزه یکی از مهمترین جاذبه‌های گردشگری ایران است.',
+                    architecture: 'میدان با ۴ بنای شاخص احاطه شده است: مسجد شاه (امام) در جنوب با گنبد فیروزه‌ای و کاشی‌کاری‌های منحصر به فرد، مسجد شیخ لطف‌الله در شرق با گنبد کرم‌رنگ بدون مناره، کاخ عالی‌قاپو در غرب با ۶ طبقه و تالار موسیقی، و بازار قیصریه در شمال که ورودی بازار بزرگ اصفهان است. معماری آن نمونه کامل شهرسازی صفوی و هماهنگی بین بناهای مذهبی، سیاسی و تجاری است.',
+                    locationDetails: 'میدان نقش جهان در مرکز تاریخی اصفهان و در انتهای خیابان چهارباغ قرار دارد. این میدان دارای ابعاد ۵۱۰ در ۱۶۳ متر است و از شمال به بازار بزرگ اصفهان متصل می‌شود.',
+                    highlights: [
+                        { title: 'مسجد شاه', desc: 'شاهکار کاشی‌کاری با گنبد ۵۲ متری' },
+                        { title: 'کاخ عالی‌قاپو', desc: 'کاخ ۶ طبقه با تالار موسیقی منحصر به فرد' },
+                        { title: 'مسجد شیخ لطف‌الله', desc: 'مسجد بدون مناره با اثر نوری طاووس' },
+                        { title: 'بازار قیصریه', desc: 'ورودی باشکوه بازار تاریخی اصفهان' }
+                    ]
+                },
+                {
+                    name: 'باغ ارم شیراز',
+                    location: 'فارس، شیراز',
+                    period: 'زندیه-قاجار (۱۷۵۰ م)',
+                    icon: '🌳',
+                    description: 'یکی از زیباترین باغ‌های تاریخی ایران با عمارت باشکوه در وسط آن که الهام‌بخش شاعران و نقاشان بوده است.',
+                    history: 'باغ ارم در دوره زندیه ساخته شد و در دوره قاجار توسط محمد قلی خان ایلخانی قشقایی بازسازی گردید. این باغ الهام‌بخش شاعران و هنرمندان بوده و در اشعار حافظ نیز به آن اشاره شده است. نام "ارم" اشاره به باغ ارم در قرآن دارد. باغ در سال ۲۰۱۱ همراه با ۸ باغ دیگر ایرانی به فهرست میراث جهانی یونسکو اضافه شد.',
+                    architecture: 'باغ ارم نمونه‌ای کامل از باغ ایرانی با طراحی چهارباغ است. عمارت اصلی آن با کاشی‌کاری‌های رنگارنگ شامل نقش‌های گل و مرغ، آینه‌کاری زیبا، و معماری دو طبقه با ایوان‌های باشکوه تزیین شده است. باغ دارای درختان کهنسال سرو و نارنج، کانال‌های آب و استخر مرکزی است. نمای ساختمان با کاشی‌های هفت رنگ شیرازی که تصاویر پادشاهان و داستان‌های حماسی را نشان می‌دهد، منحصر به فرد است.',
+                    locationDetails: 'باغ ارم در شمال شیراز و در کنار خیابان ارم واقع شده است. این باغ امروزه بخشی از مجموعه دانشگاه شیراز است و برای بازدید عمومی باز است.',
+                    highlights: [
+                        { title: 'عمارت کاشی‌کاری', desc: 'نمای زیبا با کاشی‌های هفت رنگ شیرازی' },
+                        { title: 'طراحی چهارباغ', desc: 'الگوی کلاسیک باغ‌سازی ایرانی' },
+                        { title: 'درختان کهنسال', desc: 'سروهای بلند و نارنج‌های معطر' },
+                        { title: 'تالار آینه', desc: 'آینه‌کاری سنتی با طرح‌های هندسی' }
+                    ]
+                },
+                {
+                    name: 'تخت جمشید',
+                    location: 'فارس، مرودشت',
+                    period: 'هخامنشی (۵۱۸ ق.م)',
+                    icon: '⚱️',
+                    description: 'مجموعه باستانی هخامنشی با ستون‌های باشکوه و نقش‌برجسته‌های منحصر به فرد که نماد اتحاد ملل مختلف است.',
+                    history: 'ساخت این مجموعه در زمان داریوش اول آغاز و در زمان خشایارشا و اردشیر اول ادامه یافت. این بنا نماد قدرت و وحدت ملل مختلف زیر سلطه هخامنشیان بود. تخت جمشید محل برگزاری مراسم نوروز و دریافت خراج از سراسر امپراتوری بود. نام "تخت جمشید" در دوره اسلامی به آن داده شد زیرا مردم آن را به جمشید، پادشاه اساطیری ایران، نسبت می‌دادند.',
+                    architecture: 'تخت جمشید بر روی سکویی به ارتفاع ۱۸ متر بنا شده است. پلکان اصلی دارای ۱۱۱ پله با شیب ملایم است تا اسب‌ها و کالسکه‌ها بتوانند از آن بالا روند. ستون‌های باشکوه با سرستون‌های به شکل گاو نر، شیر و عقاب، نقش‌برجسته‌های نمایندگان ملل مختلف، و کتیبه‌های میخی از ویژگی‌های معماری آن است.',
+                    locationDetails: 'تخت جمشید در ۱۰ کیلومتری شمال شرقی شهر مرودشت و ۷۰ کیلومتری شمال شرقی شیراز در دشت مرودشت قرار دارد.',
+                    highlights: [
+                        { title: 'پلکان اصلی', desc: '۱۱۱ پله با نقش‌برجسته‌های باشکوه' },
+                        { title: 'کتیبه‌های میخی', desc: 'نوشته‌های سه زبانه هخامنشی' },
+                        { title: 'آرامگاه پادشاهان', desc: 'مقابر کنده شده در کوه' },
+                        { title: 'خزانه', desc: 'محل نگهداری گنجینه‌های امپراتوری' }
+                    ]
+                },
+                {
+                    name: 'گنبد سلطانیه',
+                    location: 'زنجان',
+                    period: 'ایلخانی (۱۳۰۲ م)',
+                    icon: '🕌',
+                    description: 'بزرگترین گنبد آجری جهان با ارتفاع ۵۰ متر که الگوی معماری گنبدهای بعدی از جمله تاج محل شد.',
+                    history: 'این بنا در سال ۱۳۰۲ میلادی به دستور سلطان محمد خدابنده ایلخانی ساخته شد. سلطانیه قصد داشت مرکز جهان اسلام شود و این گنبد به عنوان آرامگاه او ساخته شد. گنبد سلطانیه الگویی برای ساخت گنبد تاج محل هند و بسیاری از گنبدهای دیگر شد. این بنا در سال ۲۰۰۵ به فهرست میراث جهانی یونسکو اضافه شد.',
+                    architecture: 'گنبد دارای ساختار دوپوسته است با قطر داخلی ۲۵ متر و ارتفاع کلی ۵۰ متر. ۸ مناره در اطراف گنبد قرار دارد. تزئینات داخلی شامل کاشی‌کاری‌های فیروزه‌ای، کتیبه‌های قرآنی با خط کوفی و ثلث، و نقاشی‌های دیواری است. گنبد بدون هیچ ستون داخلی ساخته شده که نشان‌دهنده پیشرفت فن‌آوری معماری آن زمان است.',
+                    locationDetails: 'گنبد سلطانیه در شهر سلطانیه واقع در ۳۸ کیلومتری جنوب شرقی زنجان قرار دارد. این شهر در دوره ایلخانی پایتخت ایران بود.',
+                    highlights: [
+                        { title: 'بزرگترین گنبد آجری', desc: 'رکورد جهانی با ۵۰ متر ارتفاع' },
+                        { title: 'ساختار دوپوسته', desc: 'نوآوری معماری قرن ۱۴' },
+                        { title: 'کاشی‌کاری فیروزه‌ای', desc: 'تزئینات منحصر به فرد ایلخانی' },
+                        { title: '۸ مناره', desc: 'مناره‌های اطراف گنبد' }
+                    ]
+                }
+            ],
+            palaces: [
+                {
+                    name: 'کاخ گلستان',
+                    location: 'تهران',
+                    period: 'قاجار (۱۷۹۴ م)',
+                    icon: '👑',
+                    description: 'کهن‌ترین بنای تهران و از آثار باقی‌مانده دوره قاجار که ترکیبی از معماری سنتی ایرانی و هنر اروپایی است.',
+                    history: 'کاخ گلستان در زمان شاه طهماسب صفوی ساخته شد و در دوره قاجار گسترش یافت و به مرکز حکومت تبدیل شد. این مجموعه شامل ۱۷ کاخ و عمارت است که هر کدام کاربری خاصی داشتند. تالار آینه، عمارت بادگیر، تالار سلام، و موزه نفیس‌ترین بخش‌های این مجموعه هستند. کاخ گلستان محل برگزاری مراسم تاجگذاری پادشاهان قاجار و پهلوی بود.',
+                    architecture: 'کاخ گلستان ترکیبی از معماری ایرانی و اروپایی است با آینه‌کاری‌های زیبا، نقاشی‌های دیواری، کاشی‌کاری‌های رنگارنگ، و گچ‌بری‌های ظریف. تالار آینه با هزاران قطعه آینه، عمارت بادگیر با بلندترین بادگیر تهران، و حوض مرمر از جاذبه‌های اصلی این مجموعه هستند.',
+                    locationDetails: 'کاخ گلستان در مرکز تهران و در میدان ارگ واقع شده است. این مجموعه در دل بافت تاریخی تهران قرار دارد.',
+                    highlights: [
+                        { title: 'تالار آینه', desc: 'هزاران قطعه آینه و شمع‌دان کریستال' },
+                        { title: 'عمارت بادگیر', desc: 'بلندترین بادگیر تهران با ۳۳ متر ارتفاع' },
+                        { title: 'تخت مرمر', desc: 'تخت سلطنتی از سنگ مرمر زرد یزد' },
+                        { title: 'تالار سلام', desc: 'محل برگزاری مراسم رسمی دربار' }
+                    ]
+                },
+                {
+                    name: 'کاخ عالی‌قاپو',
+                    location: 'اصفهان',
+                    period: 'صفوی (۱۵۹۷ م)',
+                    icon: '🏰',
+                    description: 'کاخ شش طبقه صفوی در میدان نقش جهان که به عنوان دروازه ورودی به مجموعه کاخ‌های سلطنتی عمل می‌کرد.',
+                    history: 'این کاخ در زمان شاه عباس اول ساخته شد و به عنوان محل استقبال از مهمانان خارجی و مرکز اداری دولت استفاده می‌شد. از ایوان این کاخ، شاه و مهمانانش مراسم میدان نقش جهان از جمله بازی چوگان را تماشا می‌کردند. کاخ دارای ۶ طبقه است که هر طبقه کاربری خاصی داشت.',
+                    architecture: 'تالار موسیقی در طبقه ششم با گچ‌بری‌های به شکل سازهای موسیقی، نقاشی‌های دیواری از مکتب اصفهان، و ایوان بزرگ با ستون‌های چوبی از ویژگی‌های منحصر به فرد این کاخ است. استخر کوچک در ایوان برای خنک‌سازی طراحی شده بود.',
+                    locationDetails: 'کاخ عالی‌قاپو در ضلع غربی میدان نقش جهان اصفهان قرار دارد و روبروی مسجد شیخ لطف‌الله است.',
+                    highlights: [
+                        { title: 'تالار موسیقی', desc: 'گچ‌بری‌های به شکل سازهای موسیقی' },
+                        { title: 'ایوان بزرگ', desc: 'محل تماشای مراسم میدان' },
+                        { title: 'نقاشی‌های دیواری', desc: 'آثار هنرمندان مکتب اصفهان' },
+                        { title: 'طبقات متعدد', desc: '۶ طبقه با کاربری‌های مختلف' }
+                    ]
+                },
+                {
+                    name: 'کاخ چهلستون',
+                    location: 'اصفهان',
+                    period: 'صفوی (۱۶۴۷ م)',
+                    icon: '🖼️',
+                    description: 'کاخ باشکوه صفوی با تالار آینه و نقاشی‌های دیواری که برای پذیرایی از سفرا استفاده می‌شد.',
+                    history: 'کاخ چهلستون در زمان شاه عباس دوم ساخته شد و برای پذیرایی از سفرا و مهمانان رسمی استفاده می‌شد. نام چهلستون (۴۰ ستون) از انعکاس ۲۰ ستون چوبی ایوان در حوض جلوی آن گرفته شده است.',
+                    architecture: 'این کاخ با ۲۰ ستون چوبی بلند، نقاشی‌های دیواری از رضا عباسی و محمد زمان، تالار آینه، و باغ زیبا از شاهکارهای معماری صفوی است. نقاشی‌ها شامل صحنه‌های جنگی، ضیافت‌های سلطنتی، و داستان‌های عاشقانه است.',
+                    locationDetails: 'کاخ چهلستون در خیابان چهارباغ عباسی اصفهان و در مجاورت کاخ عالی‌قاپو واقع شده است.',
+                    highlights: [
+                        { title: 'نقاشی‌های رضا عباسی', desc: 'شاهکارهای مکتب نقاشی اصفهان' },
+                        { title: '۲۰ ستون چوبی', desc: 'ستون‌های بلند با سرستون منبت‌کاری' },
+                        { title: 'تالار آینه', desc: 'آینه‌کاری و گچ‌بری سنتی' },
+                        { title: 'باغ ایرانی', desc: 'طراحی چهارباغ با حوض مرکزی' }
+                    ]
+                }
+            ],
+            mosques: [
+                {
+                    name: 'مسجد شاه اصفهان',
+                    location: 'اصفهان',
+                    period: 'صفوی (۱۶۱۱ م)',
+                    icon: '🕌',
+                    description: 'شاهکار معماری اسلامی-ایرانی با گنبد فیروزه‌ای و کاشی‌کاری‌های منحصر به فرد که از زیباترین مساجد جهان است.',
+                    history: 'ساخت این مسجد در سال ۱۶۱۱ میلادی به دستور شاه عباس اول آغاز شد و ۲۶ سال طول کشید. این مسجد نماد عظمت دوره صفوی و یکی از شاهکارهای معماری اسلامی جهان است. برای ساخت آن بیش از ۱۸ میلیون آجر و کاشی استفاده شد.',
+                    architecture: 'مسجد شاه دارای گنبد مضاعف با ارتفاع ۵۲ متر، ۴ ایوان باشکوه، ۴ مناره ۴۲ متری، دو مدرسه، و کاشی‌کاری‌های فیروزه‌ای منحصر به فرد است. طراحی صوتی گنبد به گونه‌ای است که صدا ۷ بار تکرار می‌شود. محراب این مسجد با سنگ مرمر و کاشی‌های زرد رنگ تزیین شده است.',
+                    locationDetails: 'مسجد شاه در ضلع جنوبی میدان نقش جهان اصفهان قرار دارد و ورودی آن رو به میدان است.',
+                    highlights: [
+                        { title: 'گنبد دوپوسته', desc: 'ارتفاع ۵۲ متر با کاشی‌کاری فیروزه‌ای' },
+                        { title: 'کاشی‌کاری هفت رنگ', desc: 'میلیون‌ها کاشی دست‌ساز' },
+                        { title: 'طراحی صوتی', desc: 'بازتاب صدا ۷ بار در مرکز گنبد' },
+                        { title: 'محراب مرمر', desc: 'سنگ‌تراشی ظریف و خوشنویسی' }
+                    ]
+                },
+                {
+                    name: 'مسجد شیخ لطف‌الله',
+                    location: 'اصفهان',
+                    period: 'صفوی (۱۶۱۹ م)',
+                    icon: '🌙',
+                    description: 'مسجد بدون مناره و بدون صحن با گنبد کرم‌رنگ که برای استفاده خصوصی شاه ساخته شد.',
+                    history: 'این مسجد برای استفاده خصوصی دربار شاه عباس ساخته شد و به شیخ لطف‌الله میسی، عالم دینی آن زمان، اختصاص یافت. ساخت آن ۱۸ سال طول کشید و از زیباترین مساجد ایران است.',
+                    architecture: 'کاشی‌کاری‌های داخل گنبد با تغییر زاویه نور خورشید در طول روز، رنگ عوض می‌کنند و در ظهر نقش طاووس ایجاد می‌کنند. این مسجد فاقد مناره و صحن است زیرا برای استفاده عمومی نبود. راهرویی مارپیچ برای ورود به تالار اصلی وجود دارد.',
+                    locationDetails: 'مسجد شیخ لطف‌الله در ضلع شرقی میدان نقش جهان و روبروی کاخ عالی‌قاپو قرار دارد.',
+                    highlights: [
+                        { title: 'اثر نوری طاووس', desc: 'نقش طاووس در مرکز گنبد با نور خورشید' },
+                        { title: 'بدون مناره', desc: 'طراحی منحصر به فرد بدون صحن و مناره' },
+                        { title: 'راهرو مارپیچ', desc: 'ورودی با طراحی معماری خاص' },
+                        { title: 'کاشی‌کاری پویا', desc: 'تغییر رنگ با نور روز' }
+                    ]
+                },
+                {
+                    name: 'مسجد نصیرالملک',
+                    location: 'شیراز',
+                    period: 'قاجار (۱۸۷۶ م)',
+                    icon: '🌈',
+                    description: 'مسجد رنگی با پنجره‌های شیشه رنگی که در صبح نور رنگین‌کمانی به داخل می‌تاباند.',
+                    history: 'این مسجد در دوره قاجار به سفارش میرزا حسن علی نصیرالملک ساخته شد و ۱۲ سال طول کشید. این مسجد به "مسجد صورتی" شهرت دارد.',
+                    architecture: 'پنجره‌های شیشه‌های رنگی در صبح نور رنگین‌کمانی به داخل مسجد می‌تاباند و فضایی جادویی ایجاد می‌کند. ستون‌های سنگی، کاشی‌کاری‌های صورتی رنگ، و محراب زیبا از ویژگی‌های این مسجد است.',
+                    locationDetails: 'مسجد نصیرالملک در محله گودعربان شیراز و نزدیک به بازار وکیل قرار دارد.',
+                    highlights: [
+                        { title: 'شیشه‌های رنگی', desc: 'پنجره‌های رنگارنگ با طرح‌های سنتی' },
+                        { title: 'نور رنگین‌کمان', desc: 'اثرات نوری در صبح‌ها' },
+                        { title: 'کاشی‌کاری صورتی', desc: 'استفاده از رنگ صورتی در طراحی' },
+                        { title: 'ستون‌های سنگی', desc: 'معماری سنتی با سنگ‌تراشی' }
+                    ]
+                }
+            ],
+            gardens: [
+                {
+                    name: 'باغ فین کاشان',
+                    location: 'کاشان',
+                    period: 'صفوی (۱۵۹۰ م)',
+                    icon: '💧',
+                    description: 'کهن‌ترین باغ ایرانی با چشمه‌های آب طبیعی که از کوه‌های اطراف تامین می‌شود.',
+                    history: 'این باغ در دوره صفویه ساخته شد و محل قتل امیرکبیر، صدراعظم ناصرالدین شاه قاجار، بود. باغ فین با استفاده از آب طبیعی چشمه سلیمان، بدون نیاز به پمپ آب، سیستم آبیاری منحصر به فردی دارد.',
+                    architecture: 'باغ فین نمونه کامل باغ ایرانی با طراحی چهارباغ، استخرها، فواره‌ها، کانال‌های آب، درختان سرو کهنسال، و عمارت‌های تاریخی است. عمارت صفوی در وسط باغ با معماری زیبا و آینه‌کاری قرار دارد.',
+                    locationDetails: 'باغ فین در ۹ کیلومتری جنوب غربی کاشان و در کنار روستای فین واقع شده است.',
+                    highlights: [
+                        { title: 'سیستم آب طبیعی', desc: 'تامین آب از چشمه بدون پمپ' },
+                        { title: 'درختان کهنسال', desc: 'سروهای ۵۰۰ ساله' },
+                        { title: 'حمام تاریخی', desc: 'محل شهادت امیرکبیر' },
+                        { title: 'فواره‌های متعدد', desc: 'بیش از ۴۰ فواره فعال' }
+                    ]
+                },
+                {
+                    name: 'باغ دولت‌آباد یزد',
+                    location: 'یزد',
+                    period: 'افشاری (۱۷۴۷ م)',
+                    icon: '🌬️',
+                    description: 'باغ تاریخی با بلندترین بادگیر جهان که در دل کویر ساخته شده است.',
+                    history: 'این باغ در دوره افشاریه توسط محمدتقی‌خان یزدی ساخته شد. باغ نمونه‌ای از مقابله با آب و هوای سخت کویری است.',
+                    architecture: 'بادگیر این باغ با ارتفاع ۳۳.۸ متر بلندترین بادگیر خشتی جهان است. باغ دارای کانال آب طولانی ۸۰ متری، درختان کهنسال انار و سرو، و عمارت مرکزی با معماری قاجاری است. بادگیر هوای خنک را به داخل عمارت هدایت می‌کند.',
+                    locationDetails: 'باغ دولت‌آباد در مرکز شهر یزد و در خیابان شهید بهشتی واقع شده است.',
+                    highlights: [
+                        { title: 'بلندترین بادگیر', desc: '۳۳.۸ متر ارتفاع - رکورد جهانی' },
+                        { title: 'کانال آب', desc: 'کانال ۸۰ متری با آب جاری' },
+                        { title: 'درختان کهنسال', desc: 'انار و سروهای چند صد ساله' },
+                        { title: 'سیستم خنک‌کننده', desc: 'طراحی هوشمندانه اقلیمی' }
+                    ]
+                },
+                {
+                    name: 'باغ شاهزاده ماهان',
+                    location: 'کرمان، ماهان',
+                    period: 'قاجار (۱۸۵۰ م)',
+                    icon: '⛰️',
+                    description: 'باغ قاجاری در دامنه کوه با طراحی پلکانی منحصر به فرد در دل کویر.',
+                    history: 'این باغ در زمان محمدحسن‌خان سردار ایروانی در دوره قاجار ساخته شد. باغ در دامنه کوه تیغون و در نزدیکی بقعه شاه نعمت‌الله ولی قرار دارد.',
+                    architecture: 'باغ شاهزاده با طراحی پلکانی در شیب تپه ساخته شده و آب از طریق کانال‌ها در سطوح مختلف جریان دارد و آبشارهای کوچک ایجاد می‌کند. عمارت اصلی، آب‌انبار، حمام و اتاق‌های مختلف در باغ قرار دارند.',
+                    locationDetails: 'باغ شاهزاده در ۳۵ کیلومتری جنوب شرقی کرمان در شهرستان ماهان واقع است.',
+                    highlights: [
+                        { title: 'طراحی پلکانی', desc: 'ساخت در شیب کوه با سطوح مختلف' },
+                        { title: 'آبشارهای متعدد', desc: 'جریان آب در کانال‌های پلکانی' },
+                        { title: 'موقعیت کویری', desc: 'باغ سرسبز در دل کویر' },
+                        { title: 'معماری قاجاری', desc: 'عمارت با نقاشی و آینه‌کاری' }
+                    ]
+                }
+            ],
+            bazaars: [
+                {
+                    name: 'بازار تبریز',
+                    location: 'تبریز',
+                    period: 'دوره‌های مختلف (۱۰۰۰+ سال)',
+                    icon: '🏪',
+                    description: 'قدیمی‌ترین و بزرگترین بازار سرپوشیده جهان که در مسیر جاده ابریشم قرار داشت.',
+                    history: 'بازار تبریز با بیش از ۱۰۰۰ سال قدمت در مسیر جاده ابریشم قرار داشت و مرکز تجارت بین‌المللی بود. این بازار نقش مهمی در جنبش مشروطه ایفا کرد و همواره قلب تپنده اقتصاد و فرهنگ تبریز بوده است.',
+                    architecture: 'این بازار بزرگترین بازار سرپوشیده جهان است با معماری آجری، تیمچه‌ها، سراها، کاروانسراها، حمام‌ها و مسجدهای تاریخی. سقف‌های گنبدی شکل با روزنه‌های نورگیری، راسته‌های تخصصی و معماری زلزله‌بند از ویژگی‌های منحصر به فرد آن است.',
+                    locationDetails: 'بازار تبریز در مرکز تاریخی شهر تبریز و در امتداد چهارراه ساعت قرار دارد.',
+                    highlights: [
+                        { title: 'بزرگترین بازار سرپوشیده', desc: 'یک کیلومتر طول با ۵۵۰۰ مغازه' },
+                        { title: 'جاده ابریشم', desc: 'مرکز تجارت بین‌المللی قدیم' },
+                        { title: 'تیمچه امیر', desc: 'زیباترین تیمچه با معماری صفوی' },
+                        { title: 'میراث یونسکو', desc: 'ثبت شده در سال ۲۰۱۰' }
+                    ]
+                },
+                {
+                    name: 'بازار اصفهان',
+                    location: 'اصفهان',
+                    period: 'سلجوقی-صفوی (۱۱۰۰ م)',
+                    icon: '🛍️',
+                    description: 'بازار تاریخی متصل به میدان نقش جهان با راسته‌های صنفی متنوع.',
+                    history: 'بازار اصفهان در دوره سلجوقی پایه‌گذاری و در دوره صفوی توسط شاه عباس اول گسترش یافت. این بازار از دروازه قیصریه به میدان نقش جهان متصل است و یکی از مهم‌ترین مراکز تجاری ایران بوده است.',
+                    architecture: 'بازار اصفهان دارای سقف‌های آجری با نقش‌های هندسی، کاروانسراها، مسجدها، مدارس و حمام‌های تاریخی است. راسته‌های آن به صنایع دستی مختلف از جمله مس‌گری، قالی‌بافی، نقره‌سازی و منبت‌کاری اختصاص دارد.',
+                    locationDetails: 'بازار اصفهان در شمال میدان نقش جهان شروع می‌شود و تا مسجد جامع ادامه دارد.',
+                    highlights: [
+                        { title: 'دروازه قیصریه', desc: 'ورودی باشکوه با کاشی‌کاری صفوی' },
+                        { title: 'کاروانسراهای تاریخی', desc: 'محل‌های اقامت تجار' },
+                        { title: 'صنایع دستی', desc: 'راسته‌های تخصصی هر صنف' },
+                        { title: 'مسجد جامع', desc: 'اتصال به مسجد جامع عتیق' }
+                    ]
+                }
+            ],
+            caravanserais: [
+                {
+                    name: 'کاروانسرای شاه‌عباسی',
+                    location: 'اصفهان',
+                    period: 'صفوی (۱۶۰۰ م)',
+                    icon: '🐪',
+                    description: 'یکی از باشکوه‌ترین کاروانسراهای دوره صفوی در مسیر جاده ابریشم.',
+                    history: 'این کاروانسرا در زمان شاه عباس اول ساخته شد و در مسیر جاده ابریشم و راه تجاری اصفهان قرار داشت. کاروانسراهای شاه‌عباسی در فواصل مشخص برای استراحت کاروان‌ها ساخته شدند.',
+                    architecture: 'کاروانسرا دارای حیاط مرکزی با حوض، اتاق‌های پیرامونی برای کاروانیان، انبار کالا، اصطبل، مسجد و حمام است. معماری آن ترکیبی از سبک صفوی با آجرکاری زیبا و سقف‌های گنبدی است.',
+                    locationDetails: 'کاروانسراهای شاه‌عباسی در مسیرهای مختلف اصفهان به سایر شهرها پراکنده‌اند.',
+                    highlights: [
+                        { title: 'حیاط مرکزی', desc: 'فضای باز با حوض و فواره' },
+                        { title: 'اتاق‌های متعدد', desc: 'اقامتگاه تجار و مسافران' },
+                        { title: 'مسجد و حمام', desc: 'امکانات رفاهی برای کاروانیان' },
+                        { title: 'معماری صفوی', desc: 'آجرکاری و طاق‌های زیبا' }
+                    ]
+                },
+                {
+                    name: 'کاروانسرای زین‌الدین',
+                    location: 'یزد',
+                    period: 'صفوی (۱۶۰۵ م)',
+                    icon: '⭕',
+                    description: 'تنها کاروانسرای دایره‌ای شکل ایران که امروزه به هتل بوم‌گردی تبدیل شده است.',
+                    history: 'این کاروانسرا در دوره صفوی ساخته شد و در مسیر تجاری یزد به کرمان قرار دارد. نام آن از زین‌الدین حسن استاد معمار آن گرفته شده است.',
+                    architecture: 'کاروانسرای زین‌الدین با طرح دایره‌ای منحصر به فرد و معماری خشتی ساخته شده است. امروزه با حفظ بافت اصلی به هتل بوم‌گردی تبدیل شده و گردشگران می‌توانند در آن اقامت کنند.',
+                    locationDetails: 'کاروانسرای زین‌الدین در ۶۰ کیلومتری جنوب شرقی یزد در مسیر یزد به مهریز واقع است.',
+                    highlights: [
+                        { title: 'طرح دایره‌ای', desc: 'یگانه کاروانسرای گرد ایران' },
+                        { title: 'معماری خشتی', desc: 'ساخت با آجر و خشت کویری' },
+                        { title: 'هتل بوم‌گردی', desc: 'بازسازی و تبدیل به اقامتگاه' },
+                        { title: 'موقعیت کویری', desc: 'در دل کویر با چشم‌انداز زیبا' }
+                    ]
+                }
+            ]
+        };
+
+        // Mobile Menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Category Cards Click
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.dataset.category;
+                openModal(category);
+            });
+        });
+
+        // Modal Functions
+        function openModal(category) {
+            const modal = document.getElementById('heritageModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const heritageGrid = document.getElementById('heritageGrid');
+            const loading = document.getElementById('loading');
+            const searchInput = document.getElementById('searchInput');
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            const categoryNames = {
+                'unesco': 'میراث جهانی یونسکو',
+                'palaces': 'کاخ‌ها و عمارت‌ها',
+                'mosques': 'مساجد تاریخی',
+                'gardens': 'باغ‌های ایرانی',
+                'bazaars': 'بازارهای تاریخی',
+                'caravanserais': 'کاروانسراها'
+            };
+            modalTitle.textContent = categoryNames[category];
+            
+            loading.classList.add('active');
+            heritageGrid.innerHTML = '';
+            searchInput.value = '';
+            
+            setTimeout(() => {
+                loading.classList.remove('active');
+                loadHeritageItems(category);
+            }, 500);
+            
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const items = heritageGrid.querySelectorAll('.heritage-item');
+                
+                items.forEach(item => {
+                    const name = item.querySelector('.heritage-name').textContent.toLowerCase();
+                    const location = item.querySelector('.heritage-location').textContent.toLowerCase();
+                    const description = item.querySelector('.heritage-description').textContent.toLowerCase();
+                    
+                    if (name.includes(searchTerm) || location.includes(searchTerm) || description.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('heritageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function loadHeritageItems(category) {
+            const heritageGrid = document.getElementById('heritageGrid');
+            const items = heritageData[category];
+            
+            heritageGrid.innerHTML = '';
+            
+            items.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'heritage-item';
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                card.innerHTML = `
+                    <div class="heritage-placeholder">
+                        ${item.icon}
+                    </div>
+                    <div class="heritage-info">
+                        <h3 class="heritage-name">${item.name}</h3>
+                        <div class="heritage-location">📍 ${item.location}</div>
+                        <p class="heritage-description">${item.description}</p>
+                        <span class="heritage-period">${item.period}</span>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    openDetailModal(item);
+                });
+                
+                heritageGrid.appendChild(card);
+            });
+        }
+
+        function openDetailModal(item) {
+            const detailModal = document.getElementById('detailModal');
+            const detailHeader = document.getElementById('detailHeader');
+            const detailTitle = document.getElementById('detailTitle');
+            const detailAbout = document.getElementById('detailAbout');
+            const detailHistory = document.getElementById('detailHistory');
+            const detailArchitecture = document.getElementById('detailArchitecture');
+            const detailLocation = document.getElementById('detailLocation');
+            const detailHighlights = document.getElementById('detailHighlights');
+            
+            detailModal.classList.add('active');
+            
+            detailTitle.textContent = item.name + ' ' + item.icon;
+            detailAbout.textContent = item.description;
+            detailHistory.textContent = item.history;
+            detailArchitecture.textContent = item.architecture;
+            detailLocation.textContent = item.locationDetails || item.location;
+            
+            // Generate highlights
+            detailHighlights.innerHTML = '';
+            if (item.highlights) {
+                item.highlights.forEach(highlight => {
+                    const highlightItem = document.createElement('div');
+                    highlightItem.className = 'highlight-item';
+                    highlightItem.innerHTML = `
+                        <strong>${highlight.title}</strong>
+                        <span>${highlight.desc}</span>
+                    `;
+                    detailHighlights.appendChild(highlightItem);
+                });
+            }
+        }
+
+        function closeDetailModal() {
+            const detailModal = document.getElementById('detailModal');
+            detailModal.classList.remove('active');
+        }
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeDetailModal();
+            }
+        });
+
+        // Map Interaction
+        document.querySelectorAll('.map-point').forEach(point => {
+            point.addEventListener('mouseenter', (e) => {
+                const tooltip = document.getElementById('mapTooltip');
+                const name = e.target.dataset.name;
+                const heritage = e.target.dataset.heritage;
+                
+                tooltip.innerHTML = `
+                    <strong style="color: var(--primary-color); font-size: 1.1rem;">${name}</strong><br>
+                    <span style="color: var(--text-dark);">${heritage} میراث فرهنگی</span>
+                `;
+                tooltip.classList.add('active');
+                
+                const rect = e.target.getBoundingClientRect();
+                tooltip.style.left = rect.left + 'px';
+                tooltip.style.top = (rect.top - 60) + 'px';
+            });
+            
+            point.addEventListener('mouseleave', () => {
+                const tooltip = document.getElementById('mapTooltip');
+                tooltip.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Prevent right-click on images (optional)
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
